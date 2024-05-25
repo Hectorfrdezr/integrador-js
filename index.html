@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celutronix</title>
+</head>
+<body>
+  <header class="header">
+    <div class="menu container">
+      <img src="./images/logo.jpeg" alt="logo" class="logo" >
+      <input type="checkbox" id="menu">
+      <label for="menu"><img src="./images/menu.png" class="menu-icono" alt="menu"></label>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">inicio</a></li>
+          <li> <a href="#">Productos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+        <div>
+          <ul>
+            <li class="submenu">
+              <img src="./images/car.svg" id="img-carrito" alt="">
+              <div id="carrito">
+                <table id="lista-carrito">
+                  <thead>
+                    <tr>
+                      <th>Imagen</th>
+                      <th>Nombre</th>
+                      <th>Precio</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <a href="#" id="Vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    <div class="header-content container">
+      <div class="swiper mySwiper-1">
+        <div class="swiper-wraper">
+          <div class="swiper-slide">
+            <div class="header-info">
+                <div class="header-txt">
+                  <h1>Audifonos</h1>
+                  <div class="precios">
+                    <p class="precio-1">$25.000</p>
+                    <p class="precio-2">$19.000</p>
+                  </div>
+                  <a href="#" class="btn-1">información</a>
+                </div>
+                <div class="header-img">
+                  <img src="./images/audifonos/bg1.png" alt="">
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="header-info">
+              <div class="header-txt">
+                <h1>Combo Gamer</h1>
+                <div class="precios">
+                  <p class="precio-1">$35.999</p>
+                  <p class="precio-2">$25.999</p>
+                </div>
+                <a href="#" class="btn-1">información</a>
+              </div>
+              <div class="header-img">
+                <img src=".//images/teclados/Teclado-gamer-con-mouse-removebg-preview.png" alt="">
+              </div>
+          </div>
+        </div>
+          <div class="swiper-slide">
+            <div class="header-info">
+              <div class="header-txt">
+                <h1>Audifonos Inalambricos</h1>
+                <div class="precios">
+                  <p class="precio-1">$20.999</p>
+                  <p class="precio-2">$18.999</p>
+                </div>
+                <a href="#" class="btn-1">información</a>
+              </div>
+              <div class="header-img">
+                <img src="./images/audifonos bluetooth/ph3.png" alt="">
+              </div>
+        </div>
+  
+        </div>
+      </div>
+      <div class="swiper-btn-next"></div>
+      <div class="swiper-btn-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+  </header>
+
+  <section class="promos container" id="lista-1">
+    <h2>Promociones</h2>
+    <div class="categorias">
+      <div class="categoria-1">
+        <h3>Promo 1</h3>
+        <div class="precios">
+          <p class="precio-1">$300</p>
+          <p class="precio-2">$250</p>
+        </div>
+        <a href="#" class="add-carrito" data-id="1">Agregar al carrito</a>
+        <div class="categorias-img">
+          <img src="./images/audifonos/audifono_2-removebg-preview.png" alt="">
+        </div>
+      </div>
+      <div class="categoria-1">
+        <h3>Promo 2</h3>
+        <div class="precios">
+          <p class="precio-1">$300</p>
+          <p class="precio-2">$250</p>
+        </div>
+        <a href="#" class="add-carrito" data-id="2">Agregar al carrito</a>
+        <div class="categorias-img">
+          <img src="./images/teclados/teclado_gamer-removebg-preview.png" alt="">
+        </div>
+        
+      </div>
+      <div class="categoria-1">
+        <h3>Promo 3</h3>
+        <div class="precios">
+          <p class="precio-1">$300</p>
+          <p class="precio-2">$250</p>
+        </div>
+        <a href="#" class="add-carrito" data-id="3">Agregar al carrito</a>
+        <div class="categorias-img">
+          <img src="./images/mause/mouse-gamer-logitech-g300s-removebg-preview.png" alt="">
+        </div>
+        
+      </div>
+      <div class="categoria-1">
+        <h3>Promo 4</h3>
+        <div class="precios">
+          <p class="precio-1">$300</p>
+          <p class="precio-2">$250</p>
+        </div>
+        <a href="#" class="add-carrito" data-id="4">Agregar al carrito</a>
+        <div class="categorias-img">
+          <img src="./images/parlantes/parlante_3-removebg-preview.png" alt="">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <section class="products container">
+    <h2>Nuevos Productos</h2>
+    <div class="swiper mySwiper-2">
+      <div class="swiper-wraper">
+        <div class="swiper-slider">
+            <div class="product">
+              <img src="./images/audifonos/audifono_4-removebg-preview.png" alt="">
+              <div class="product-text">
+                <h3>audifono</h3>
+                <p>claidad premiun</p>
+                <p class="precio">$500</p>
+                <a href="" class="add-carrito btn-3" data-id="5"></a>
+              </div>
+            </div>
+        </div>
+        <div class="swiper-slider">
+          <div class="product">
+            <img src="./images/carcasas/carcasa_1-removebg-preview.png" alt="">
+            <div class="product-text">
+              <h3>Carcasas</h3>
+              <p>claidad premiun</p>
+              <p class="precio">$500</p>
+              <a href="" class="add-carrito btn-3" data-id="6"></a>
+            </div>
+          </div>
+          <div class="swiper-slider">
+            <div class="product">
+              <img src="./images/mause/MOUSER-GAMER-X7-2-removebg-preview.png" alt="">
+              <div class="product-text">
+                <h3>Mause gamer</h3>
+                <p>claidad premiun</p>
+                <p class="precio">$500</p>
+                <a href="" class="add-carrito btn-3" data-id="7"></a>
+              </div>
+            </div>
+            <div class="swiper-slider">
+              <div class="product">
+                <img src="./images/parlantes/parlante_5-removebg-preview.png" alt="">
+                <div class="product-text">
+                  <h3>Parlante</h3>
+                  <p>claidad premiun</p>
+                  <p class="precio">$500</p>
+                  <a href="" class="add-carrito btn-3" data-id="8"></a>
+                </div>
+              </div>
+      </div>
+      <div class="swiper-bnt-next"></div>
+      <div class="swiper-bnt-prev"></div>
+    </div>
+  </section>
+
+  <footer class="footer container">
+      <div class="link">
+        <h3>Lorem</h3>
+        <ul>
+          <li><a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+          </li>
+        </ul>
+      </div>
+      <div class="link">
+        <h3>Lorem</h3>
+        <ul>
+          <li><a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+          </li>
+        </ul>
+      </div>
+      <div class="link">
+        <h3>Lorem</h3>
+        <ul>
+          <li><a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+          </li>
+        </ul>
+      </div>
+      <div class="link">
+        <h3>Lorem</h3>
+        <ul>
+          <li><a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+          </li>
+        </ul>
+      </div>
+
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum itaque assumenda repellat, labore explicabo dolore?</p>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
