@@ -10,21 +10,20 @@
 
 body{
     background-color: #242430;
-    flex-direction: column;
-    display: flex;
+   
 }
 .container{
     max-width: 1200px;
     margin: 0 auto;
 }
-.header{
+.header{ 
     display: flex;
     align-items: center;
-    /* min-height: 70vh; */
-}
+    min-height: 80vh;
+ }
 .swiper-slide{
     display: flex;
-    /* padding: 0 80px 50px 80px; */
+    padding: 0 80px 50px 80px;
     justify-content: center;
     align-items: center;
 }
@@ -48,7 +47,7 @@ body{
     background-color: #7270ec;
 }
 #menu{
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -58,7 +57,21 @@ body{
     z-index: 1000;
 }
 .logo{
-    width: 15%;
+    width: 10%;
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+    
+}
+.menu
+.navbar ul li a{
+    font-size: 19px;
+    padding: 20px;
+    color: #feffff;
+    display: block;
+
+
 }
 .menu .navbar ul li a:hover{
     color: #7270ec;
@@ -76,11 +89,11 @@ body{
 .submenu{
     position: relative;
 }
-.submenu #carrrito{
+.submenu #carrito{
     display: none;
 }
 .submenu:hover #carrito{
-    /* display: block; */
+    display: block;
     position: absolute;
     right: 0;
     backdrop-filter: blur(10px);
@@ -126,11 +139,11 @@ td{
 .header-img img{
     width: 500px;
 }
-.pricios{
+.precios{
     display: flex;
     margin: 20px 0;
 }
-.pricio-1{
+.precio-1{
     font-size: 30px;
     color: #74788f;
     text-decoration: line-through;
@@ -192,33 +205,33 @@ hr{
 .categorias-img{
     width: 50%;
 }
-.product-img{
+.product img{
     width: 150px;
     padding-bottom: 15px;
 }
-.product h2{
+.products h2{
     font-size: 50px;
     color: #feffff;
-    margin-bottom:  50px;
+    margin-bottom:  70px;
 }
-.product{
+.products{
     text-align: center;
 }
 .product a{
     color: #feffff;
 }
-.product-txt h3{
+.product-text h3{
     font-size: 18px;
     color: #feffff;
     margin-bottom: 15px;
 }
-.product-txt p{
+.product-text p{
     color: #74788f;
     font-size: 18px;
     margin-bottom: 15px;
 }
 .precio{
-    color: #7270ec;
+    color: #7270ec !important;
 }
 .btn-3{
     display: inline-block;
@@ -235,6 +248,9 @@ hr{
     display: flex;
     padding: 30px 0;
 }
+.link{
+    width: 20%;
+}
 .link h3{
     color: #feffff;
     margin-bottom: 20px;
@@ -248,4 +264,108 @@ hr{
 .link p{
     color: #74788f;
     font-size: 16px;
+}
+@media(max-width:991px){
+    
+    .menu{
+        padding: 20px;
+    }
+    .menu label{
+        display: initial;
+    }
+    .menu .navbar{
+        position: absolute;
+        top:100%;
+        left: 0;
+        right: 0;
+        background-color: #1f1e1e;
+        display: none;
+        
+    }
+    .menu .navbar ul li{
+        width: 100%;
+    }
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+    .logo{
+        display: none;
+    }
+    .submenu:hover #carrito{
+        min-width: 100%;
+    }
+    .mySwiper-1{
+        width: 300px;
+    }
+    .swiper-slide{
+        padding: 0 30px 50px 30px;
+    }
+    .header-content{
+        padding: 100px 0 50px 0;
+    }
+    .header-img{
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-txt{
+        width: 100%;
+    }
+    .header-txt h1{
+        font-size: 40px;
+    }
+    .header-img img{
+        width: 200px;
+    }
+    .header-img{
+        width: 100%;
+    }
+    .precios{
+        flex-direction: column;
+    }
+    .precio-1{
+        margin: 0;
+    }
+    .btn-1{
+        margin: 20px 0;
+    }
+    .promos{
+        padding: 50px;
+    }
+    .promos h2{
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    .categorias{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .categorie{
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .categoria-1{
+        width: 100%;
+        margin-bottom: 25px;
+        order: -1;
+    }
+    .categorias-img{
+        width: 100%;
+    }
+    .products{
+        padding: 30px;
+    }
+    .products h2{
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .link{
+        width: 100%;
+    }
+
 }
