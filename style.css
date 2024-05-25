@@ -47,18 +47,18 @@ body{
 .swiper-pagination-bullet-active{
     background-color: #7270ec;
 }
-#menu{
+.menu{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: space-between;
     z-index: 1000;
 }
 .logo{
-    width: 10%;
+    width: 4%;
 }
 .menu .navbar ul li {
     position: relative;
