@@ -172,11 +172,13 @@ hr{
 .promos{
     padding: 50px 0;
     text-align: center;
+    
 }
 .promos h2{
     font-size: 50px;
     color: #feffff;
     margin-bottom: 35px;
+    
 }
 .categorias{
     text-align: left;
