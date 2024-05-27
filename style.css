@@ -69,7 +69,7 @@ body{
 }
 .menu
 .navbar ul li a{
-    font-size: 19px;
+    font-size: 29px;
     padding: 20px;
     color: #feffff;
     display: block;
@@ -88,6 +88,9 @@ body{
 .menu label{
     display: none;
     cursor: pointer;
+}
+.submenu img{
+    width: 65px;
 }
 .submenu{
     position: relative;
@@ -131,7 +134,7 @@ td{
     width: 50%;
 }
 .header-txt h1{
-    font-size: 50px;
+    font-size: 100px;
     color: #feffff;
     text-transform: capitalize;
 }
@@ -153,14 +156,14 @@ td{
     margin-right: 25px;
 }
 .precio-2{
-    font-size: 30px;
+    font-size: 50px;
     color: #7270ec;
 }
 .btn-1{
     display: inline-block;
     background-color: #7270ec;
     color: #feffff;
-    font-size: 16px;
+    font-size: 26px;
     padding: 10px 25px;
     border-radius: 25px;
     margin-top: 40px;
@@ -187,6 +190,7 @@ hr{
     text-align: left;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 }
 .categorie{
