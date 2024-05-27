@@ -14,8 +14,9 @@ body{
    
 }
 .container{
-    max-width: 1200px;
-    margin: 0 auto;
+   margin: 0 auto;
+   justify-content: center;
+   align-items: center;
 }
 .header{ 
     display: flex;
@@ -52,6 +53,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
+    padding: 10px 80px;
     display: flex;
     align-items: center; 
     justify-content: space-between;
@@ -167,37 +169,46 @@ td{
     background-color: #6c69f9;
 }
 hr{
-    border: 1px solid #7a7b8716;
+    border: 1px solid #7a7b8f16;
 }
 .promos{
     padding: 50px 0;
-    text-align: center;
+    text-align: center;  
     
 }
 .promos h2{
     font-size: 50px;
-    color: #feffff;
+    color: #f5f2f2;
     margin-bottom: 35px;
     
 }
-.categorias{
+.categories{
+    gap: 45px;
     text-align: left;
     display: flex;
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+
 }
 .categorie{
+    width: 20%;
+    background-color: #121313;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    padding: 35px;
+    padding: 55px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
 }
 .categorie img{
-    width: 150px;
+    width: 250px;
 }
 .categoria-1{
     width: 50%;
 }
 .categoria-1 h3{
-    color: #feffff;
+    color: #1f1f1f;
     font-size: 22px;
     font-weight: 600;
 }
@@ -209,7 +220,8 @@ hr{
     width: 50%;
 }
 .product img{
-    width: 150px;
+    background-color: #121313;
+    width: 100%;
     padding-bottom: 15px;
 }
 .products h2{
@@ -218,6 +230,7 @@ hr{
     margin-bottom:  70px;
 }
 .products{
+
     text-align: center;
 }
 .product a{
@@ -237,6 +250,7 @@ hr{
     color: #7270ec !important;
 }
 .btn-3{
+    color:#feffff ;
     display: inline-block;
     padding: 10px 25px;
     font-size: 14px;
