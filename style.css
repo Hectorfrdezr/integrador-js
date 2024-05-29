@@ -279,6 +279,10 @@ hr{
     display: block;
     margin-bottom: 10px;
 }
+.link h2{
+    color: #ebe7e7;
+    margin-bottom: 18px;
+}
 .link p{
     color: #74788f;
     font-size: 16px;
