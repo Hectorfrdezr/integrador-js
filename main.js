@@ -7,7 +7,7 @@ const swiper = new Swiper(".mySwiper-1", {
         clickable:true,
     },
     navigation: {
-        nextEl:"swiper-button-next",
-        prevEl:"swiper-button-prev",
+        nextEl: "swiper-button-next",
+        prevEl: "swiper-button-prev",
     }
-});
+}); 

@@ -14,16 +14,15 @@ body{
     
 }
 .container{
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
+    max-width: 1200px;
+    margin: 0 auto;
+    
 }
 .header{ 
     display: flex;
     align-items: center;
     min-height: 80vh;
-    padding: 150px; ;
+    
  }
 .swiper-slide{
     display: flex;
@@ -182,39 +181,33 @@ hr{
     
 }
 .promos h2{
-    font-size: 50px;
+    font-size: 80px;
     color: #f5f2f2;
     margin-bottom: 35px;
     
+    
 }
 .categories{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 100px;  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 100px;
+    
 }
 .categorie{
-  border-radius: 8px;
-  background-color: #121313;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 400px;
-  padding: 25px;
-  /* border:  1px red solid; */
+  padding: 35px;
 }
 .categorie h2{
     font-size: 24px;
     text-align: center;
 }
 .categorie img{
-    width: 150px;
+    width: 200px;
 }
 .categoria-1{
-    width: 100%;
+    width: 50%;
 }
 .categoria-1 h3{
     color: #ebe7e7;
@@ -230,7 +223,7 @@ hr{
     width: 50%;
 }
 .product img{
-    width: 350px;
+    width: 200px;
     padding-bottom: 15px;
 }
 .products h2{
@@ -240,8 +233,6 @@ hr{
 }
 .products{
     text-align: center;
-    width: 100%;
-    /* padding: 0 850px; */
 }
 .product a{
     color: #feffff;
@@ -322,30 +313,32 @@ hr{
         min-width: 100%;
     }
     .mySwiper-1{
-        width: 100%;
+        width: 300px;
     }
     .swiper-slide{
-        padding: 0 30px 20px 50px;
+        padding: 0 30px 50px 30px;
     }
     .header-content{
         padding: 100px 0 50px 0;
     }
-    .header-img{
+    .header-info{
         padding: 0;
         flex-direction: column;
         text-align: center;
     }
+   
     .header-txt{
         width: 100%;
     }
     .header-txt h1{
         font-size: 40px;
     }
-    .header-img img{
-        width: 150px;
-    }
+   
     .header-img{
         width: 100%;
+    }
+    .header-img img{
+        width: 200px;
     }
     .precios{
         flex-direction: column;
