@@ -217,7 +217,7 @@ hr{
 .categoria-1 p{
     color: #74788f;
     font-size: 20px;
-    margin-left: 18px;
+    margin-right: 20px;
 }
 .categorias-img{
     width: 50%;
@@ -247,7 +247,7 @@ hr{
     font-size: 18px;
     margin-bottom: 15px;
 }
-.precio{
+.precio-2{
     color: #7270ec !important;
 }
 .btn-3{
