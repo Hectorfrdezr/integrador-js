@@ -39,8 +39,9 @@ function fetchProducts() {
         });
 } 
 
+// Recuperar los datos del carrito desde el localStorage
 function fetchCart() {
-    // Recuperar los datos del carrito desde el localStorage
+    cart = [];
     const cartData = JSON.parse(localStorage.getItem('cart')) || [];
     cartData.forEach(product => {
         cart.push(product);
