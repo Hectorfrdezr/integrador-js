@@ -516,8 +516,11 @@ hr{
     .products{
         padding: 30px;
     }
+    .products h2{
+        font-size: 22px;
+    }
     .products h1{
-        font-size: 25px;
+        font-size: 12px;
         margin-bottom: 40px;
     }
     .footer {
