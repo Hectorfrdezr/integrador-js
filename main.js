@@ -88,7 +88,7 @@ function fetchCart() {
                 new Swiper('.mySwiper-1', {
                     loop: true,
                     autoplay: {
-                        delay: 5000,
+                        delay: 2500,
                         disableOnInteraction: false
                     },
                         navigation: {
@@ -103,8 +103,8 @@ function fetchCart() {
 
                 new Swiper('.mySwiper-2', {
                     loop: true,
-                    autoplay:{
-                        delay: 5000,
+                    autoplay: {
+                        delay: 2500,
                         disableOnInteraction: false
                     },
                     navigation: {
