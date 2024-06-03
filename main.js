@@ -39,24 +39,7 @@ function fetchProducts() {
         });
 } 
 
-    // Función para obtener el carrito desde la API
-    function fetchCart() {
-        fetch('https://fakestoreapi.com/carts/5')
-            .then(res => res.json())
-            .then(cartData => {
-                const productPromises = cartData.products.map(cartItem =>
-                    fetch(`https://fakestoreapi.com/products/${cartItem.productId}`)
-                        .then(res => res.json())
-                );
-                return Promise.all(productPromises);
-            })
-            .then(products => {
-                products.forEach(product => {
-                    cart.push(product);
-                });
-                updateCart();
-            });
-    }
+   
 
     // Función para obtener productos para los sliders
     function fetchSliderProducts() {
