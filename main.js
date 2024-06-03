@@ -39,7 +39,14 @@ function fetchProducts() {
         });
 } 
 
-   
+function fetchCart() {
+    // Recuperar los datos del carrito desde el localStorage
+    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    cartData.forEach(product => {
+        cart.push(product);
+    });
+    updateCart();
+}
 
     // Función para obtener productos para los sliders
     function fetchSliderProducts() {
