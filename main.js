@@ -83,22 +83,30 @@ function fetchCart() {
                         swiperWrapper2.appendChild(div);
                     }
                 });
-
+                
                 // Inicializar los swipers después de agregar los productos
                 new Swiper('.mySwiper-1', {
                     loop: true,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false
                     },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    }
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev'
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true
+                        }
                 });
 
                 new Swiper('.mySwiper-2', {
                     loop: true,
+                    autoplay:{
+                        delay: 5000,
+                        disableOnInteraction: false
+                    },
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'

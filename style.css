@@ -120,14 +120,30 @@ body{
 .submenu #carrito{
     display: none;
 }
+#vaciar-carrito,
+#procesar-compra{
+    color: #050505;
+    font-size: 12px;
+    font-weight: 600;
+}
+tr .remove{
+    border:1px rgb(171, 248, 147) solid;
+    padding: 4px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+}
 .submenu:hover #carrito{
     display: block;
     position: absolute;
     right: 0;
-    backdrop-filter: blur(10px);
     top: 100%;
     z-index: 1;
-    background-color: #4e4b5076;
+    background-color: #f4f0f7f8;
     padding: 20px;
     min-width: 400px;
     border-radius: 5px;
@@ -139,7 +155,13 @@ table{
 }
 th,
 td{
+    font-size: 12px;
+    font-weight: bold;
     color: #1b1c1b;
+}
+td img{
+    border-radius: 12px;
+    border:#28a745 1px solid;
 }
 .header-content{
     max-width: 1024px;
@@ -181,7 +203,7 @@ td{
 .btn-1{
     display: inline-block;
     background-color: #2d6546;
-    color: #feffff;
+    color: #e7e4e4;
     font-size: 26px;
     padding: 10px 25px;
     border-radius: 25px;
