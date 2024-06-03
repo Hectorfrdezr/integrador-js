@@ -490,6 +490,7 @@ hr{
    
     .header-img{
         width: 100%;
+        padding: 14px;
     }
     .header-img img{
         width: 200px;
@@ -531,6 +532,9 @@ hr{
     }
     .products img{
         max-width: 100px;
+        text-align: center;
+        
+        margin-right: 38px;
     }
     .products h1{
         font-size: 12px;
