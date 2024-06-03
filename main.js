@@ -1,109 +1,260 @@
-const swiper = new Swiper(".mySwiper-1", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination:{
-        el: ".swiper-pagination",
-        clickable:true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    }
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const productList = document.getElementById('product-list');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItems = document.querySelector('#lista-carrito tbody');
 
-const swip = new Swiper(".mySwiper-2", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints:{
-        0:{
-            slidesPerView: 1
-        },
-        520:{
-            slidesPerView: 2
-        },
-        950:{
-            slidesPerView: 3
+    // Función para actualizar el carrito en el DOM
+    function updateCart() {
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><img src="${item.image}" width="50"></td>
+                <td>${item.title}</td>
+                <td>$${item.price}</td>
+                <td><a href="#" class="remove" data-id="${item.id}">X</a></td>
+            `;
+            cartItems.appendChild(row);
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    } 
+// Función para obtener productos desde la API
+function fetchProducts() {
+    fetch('https://fakestoreapi.com/products?limit=20')
+        .then(res => res.json())
+        .then(products => {
+            products.forEach(product => {
+                const div = document.createElement('div');
+                div.className = 'product';
+                div.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}">
+                    <div class="product-text">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <p class="precio-2">$${product.price}</p>
+                        <a href="#" class="add-carrito btn-3" data-id="${product.id}">Comprar</a>
+                    </div>
+                `;
+                productList.appendChild(div);
+            });
+        });
+} 
+
+    // Función para obtener el carrito desde la API
+    function fetchCart() {
+        fetch('https://fakestoreapi.com/carts/5')
+            .then(res => res.json())
+            .then(cartData => {
+                const productPromises = cartData.products.map(cartItem =>
+                    fetch(`https://fakestoreapi.com/products/${cartItem.productId}`)
+                        .then(res => res.json())
+                );
+                return Promise.all(productPromises);
+            })
+            .then(products => {
+                products.forEach(product => {
+                    cart.push(product);
+                });
+                updateCart();
+            });
+    }
+
+    // Función para obtener productos para los sliders
+    function fetchSliderProducts() {
+        fetch('https://fakestoreapi.com/products?limit=8')
+            .then(res => res.json())
+            .then(products => {
+                const swiperWrapper1 = document.querySelector('.mySwiper-1 .swiper-wrapper');
+                const swiperWrapper2 = document.querySelector('.mySwiper-2 .swiper-wrapper');
+
+                products.forEach((product, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'swiper-slide';
+                    div.innerHTML = `
+                        <div class="header-info">
+                            <div class="header-txt">
+                                <h1>${product.title}</h1>
+                                <div class="precios">
+                                    <p class="precio-1">Antes: $${(product.price * 1.2).toFixed(2)}</p>
+                                    <p class="precio-2">Ahora: $${product.price}</p>
+                                </div>
+                                <a href="#" class="btn-1">información</a>
+                            </div>
+                            <div class="header-img">
+                                <img src="${product.image}" alt="${product.title}">
+                            </div>
+                        </div>
+                    `;
+
+                    if (index < 4) {
+                        swiperWrapper1.appendChild(div);
+                    } else {
+                        swiperWrapper2.appendChild(div);
+                    }
+                });
+
+                // Inicializar los swipers después de agregar los productos
+                new Swiper('.mySwiper-1', {
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    }
+                });
+
+                new Swiper('.mySwiper-2', {
+                    loop: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
+                });
+            });
+    }
+
+    // Evento click para añadir productos al carrito
+    productList.addEventListener('click', e => {
+        if (e.target.classList.contains('add-carrito')) {
+            e.preventDefault();
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            fetch(`https://fakestoreapi.com/products/${productId}`)
+                .then(res => res.json())
+                .then(product => {
+                    cart.push(product);
+                    updateCart();
+                });
         }
+    });
+
+    // Evento click para eliminar productos del carrito
+    document.querySelector('#lista-carrito').addEventListener('click', e => {
+        if (e.target.classList.contains('remove')) {
+            e.preventDefault();
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const productIndex = cart.findIndex(p => p.id === productId);
+            if (productIndex > -1) {
+                cart.splice(productIndex, 1);
+                updateCart();
+            }
+        }
+    });
+
+    // Evento click para vaciar el carrito
+    document.getElementById('vaciar-carrito').addEventListener('click', e => {
+        e.preventDefault();
+        cart.length = 0;
+        updateCart();
+    });
+
+    // Evento click para procesar la compra
+    document.getElementById('procesar-compra').addEventListener('click', e => {
+        e.preventDefault();
+        if (cart.length > 0) {
+            const products = cart.map(product => ({
+                productId: product.id,
+                quantity: 1
+            }));
+            fetch('https://fakestoreapi.com/carts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    userId: 5,
+                    date: new Date().toISOString(),
+                    products
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(order => {
+                alert('Compra realizada con éxito!');
+                cart.length = 0;
+                updateCart();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al procesar la compra.');
+            });
+        } else {
+            alert('El carrito está vacío.');
+        }
+    });
+
+    // Inicialización de funciones al cargar la página
+    fetchProducts();
+    fetchCart();
+    fetchSliderProducts();
+    updateCart();  // Actualizar la vista del carrito al cargar la página
+
+    // Menú hamburguesa
+    const menuIcon = document.querySelector('.menu-icono');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Formulario de contacto
+    const contactForm = document.getElementById('contact-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        // Validar nombre
+        if (nameInput.value.trim() === '') {
+            nameError.textContent = 'El nombre es obligatorio';
+            nameError.style.display = 'block';
+            isValid = false;
+        } else {
+            nameError.style.display = 'none';
+        }
+
+        // Validar email
+        if (emailInput.value.trim() === '') {
+            emailError.textContent = 'El correo electrónico es obligatorio';
+            emailError.style.display = 'block';
+            isValid = false;
+        } else if (!validateEmail(emailInput.value.trim())) {
+            emailError.textContent = 'Ingrese un correo electrónico válido';
+            emailError.style.display = 'block';
+            isValid = false;
+        } else {
+            emailError.style.display = 'none';
+        }
+
+        // Validar mensaje
+        if (messageInput.value.trim() === '') {
+            messageError.textContent = 'El mensaje es obligatorio';
+            messageError.style.display = 'block';
+            isValid = false;
+        } else {
+            messageError.style.display = 'none';
+        }
+
+        // Mostrar mensaje de éxito si el formulario es válido
+        if (isValid) {
+            formSuccess.textContent = 'Mensaje enviado con éxito';
+            formSuccess.style.display = 'block';
+            contactForm.reset();
+        }
+    });
+
+    // Función para validar correo electrónico
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
+        return re.test(String(email).toLowerCase());
     }
+
 });
-//carrito
-const carrito = document.querySelector(`#carrito`);
-const elemento1 = document.querySelector(`#lista-1`);
-const elemento2 = document.querySelector(`#lista-2`);
-const lista = document.querySelector(`#lista-carrito tbody`);
-const clear = document.querySelector(`#vaciar-carrito`);
-
-cargarEventListeners();
-
-function cargarEventListeners(){
-    elemento1.addEventListener(`click`, comprarElemento);
-    elemento2.addEventListener(`click`, comprarElemento);
-    carrito.addEventListener(`click`, eliminarElemento);
-
-    clear.addEventListener(`click`, eliminar);
-
-};
-
-function comprarElemento(e) {
-    e.preventDefault();
-    if(e.target.classList.contains(`add-carrito`)) {
-        const elemento = e.target.parentElement.parentElement;
-        leerDatosElemento(elemento);
-    }
-};
-
-function leerDatosElemento(elemento){
-    const infoElemento = {
-        imagen: elemento.querySelector(`img`).src,
-        titulo: elemento.querySelector(`h3`).textContent,
-        precio: elemento.querySelector(`.precio-2`).textContent,
-        id: elemento.querySelector(`a`).getAttribute(`data-id`)
-    }
-    insertarCarrito(infoElemento);
-};
-
-function insertarCarrito(elemento){
-    const row = document.createElement(`tr`);
-    row.innerHTML=`
-    <td>
-        <img src="${elemento.imagen}" wisth=100>  
-    </td>
-    <td>
-         ${elemento.titulo}  
-    </td>
-    <td>   
-    ${elemento.precio}
-    </td>
-    <td>
-        <a herf="#" class="borrar" data-id="${elemento.id}">x</a>  
-    </td>   
-    `;
-    lista.appendChild(row);
-};
-
-function eliminarElemento(e){
-    e.preventDefault();
-    let elemento,
-        elementoId;
-    if(e.target.classList.contains(`borrar`)) {
-        e.target.parentElement.parentElement.remove();
-        elemento = e.target.parentElement.parentElement;
-        elementoId = elemento.querySelector(`a`).getAttribute(`data-id`);
-    }
-        
-};
-
-function eliminar(){
-    while(lista.firstChild){
-        lista.removeChild(lista.firstChild);
-    }
-    return false;
-};
-
- 

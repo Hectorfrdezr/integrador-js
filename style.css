@@ -9,16 +9,15 @@
 }
 
 body{
-    background-color: #242430;
+    background-color: #e5e2e2;
  
     
 }
 .container{
-    max-width: 1200px;
     margin: 0 auto;
-    
 }
 .header{ 
+    background-color: #feffff;
     display: flex;
     align-items: center;
     min-height: 80vh;
@@ -37,17 +36,17 @@ body{
     font-size: 25px;
 }
 .swiper-button-prev{
-    color: #feffff;
+    color: #2a2c2c;
 }
 .swiper-button-next{
-    color: #feffff;
+    color: #2a2c2c;
 }
 .swiper-pagination-bullet{
     background-color: #747474;
     opacity: 1;
 }
 .swiper-pagination-bullet-active{
-    background-color: #7270ec;
+    background-color: #1cf0cd;
 }
 .menu{
     position: absolute;
@@ -59,6 +58,7 @@ body{
     align-items: center; 
     justify-content: space-between;
     z-index: 1000;
+    background-color: #2d6546;
 }
 .logo{
     width: 4%;
@@ -72,13 +72,13 @@ body{
 .navbar ul li a{
     font-size: 29px;
     padding: 20px;
-    color: #feffff;
+    color: #ecf0f0;
     display: block;
 
 
 }
 .menu .navbar ul li a:hover{
-    color: #7270ec;
+    color: #1cf0cd;
 }
 #menu{
     display: none;
@@ -109,23 +109,17 @@ body{
     background-color: #4e4b5076;
     padding: 20px;
     min-width: 400px;
+    border-radius: 5px;
 }
 table{
     width: 100%;
 }
 th,
 td{
-    color: #feffff;
-}
-.borrar{
-    background-color: #7270ec;
-    border-radius: 50%;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #feffff;
-    font-weight: 800;
+    color: #1b1c1b;
 }
 .header-content{
+    max-width: 1200px;
     padding: 200px 0 100px 0;
 }
 .header-info{
@@ -135,8 +129,8 @@ td{
     width: 50%;
 }
 .header-txt h1{
-    font-size: 100px;
-    color: #feffff;
+    font-size: 45px;
+    color: #141616;
     text-transform: capitalize;
 }
 .header-img{
@@ -145,6 +139,7 @@ td{
 }
 .header-img img{
     width: 500px;
+    
 }
 .precios{
     display: flex;
@@ -158,11 +153,11 @@ td{
 }
 .precio-2{
     font-size: 50px;
-    color: #7270ec;
+    color: #050505;
 }
 .btn-1{
     display: inline-block;
-    background-color: #7270ec;
+    background-color: #2d6546;
     color: #feffff;
     font-size: 26px;
     padding: 10px 25px;
@@ -170,72 +165,98 @@ td{
     margin-top: 40px;
 }
 .btn-1:hover{
-    background-color: #6c69f9;
+    background-color: #1cf0cd;
 }
 hr{
-    border: 1px solid #7a7b8f16;
+    border: 6px solid #2d6546;
 }
 .promos{
     padding: 50px 0;
-    text-align: center;  
-    
+    text-align: center;
+    width: 100%;
 }
 .promos h2{
     font-size: 80px;
-    color: #f5f2f2;
-    margin-bottom: 35px;
-    
-    
+    color: #050505;
+    margin-bottom: 35px; 
 }
-.categories{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 100px;
-    
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.categorie{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 35px;
+.product {
+    width: 25%;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
-.categorie h2{
-    font-size: 24px;
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product .product-text {
+    padding: 10px 0;
+}
+
+.product .product-text h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product .product-text p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product .product-text .precio-2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product .product-text .add-carrito {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
     text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
-.categorie img{
-    width: 150px;
+
+.product .product-text .add-carrito:hover {
+    background-color: #45a049;
 }
-.categoria-1{
-    width: 50%;
-}
-.categoria-1 h3{
-    color: #ebe7e7;
-    font-size: 22px;
-    font-weight: 600;
-}
-.categoria-1 p{
-    color: #74788f;
-    font-size: 20px;
-    margin-right: 20px;
-}
-.categorias-img{
-    width: 50%;
-}
+
 .product img{
-    width: 200px;
+    width: 150px;
     padding-bottom: 15px;
 }
 .products h2{
+
     font-size: 60px;
-    color: #feffff;
+    color: #131313;
     margin-bottom:  50px;
 }
 .products{
     text-align: center;
 }
 .product a{
-    color: #feffff;
+    color: #1c1f1f;
 }
 .product-text h3{
     font-size: 22px;
@@ -248,7 +269,7 @@ hr{
     margin-bottom: 15px;
 }
 .precio-2{
-    color: #7270ec !important;
+    color: #060608 ;
 }
 .btn-3{
     color:#feffff ;
@@ -287,6 +308,57 @@ hr{
     color: #74788f;
     font-size: 16px;
 }
+/* Formulario de contacto */
+#contacto {
+    padding: 2rem;
+    background: #f4f4f4;
+    margin-top: 2rem;
+  }
+  
+  #contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875rem;
+    display: none;
+  }
+  
+  .success {
+    color: green;
+    font-size: 1rem;
+    display: none;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  button[type="submit"] {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 @media(max-width:991px){
     
     .menu{
