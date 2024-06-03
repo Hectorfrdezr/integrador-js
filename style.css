@@ -349,6 +349,7 @@ hr{
     flex-wrap: wrap;
     width: 100%;
     text-align: center;
+    margin-bottom: 25px;
   }
   
   .footer-section {
@@ -361,41 +362,43 @@ hr{
     border-bottom: 2px solid #fff;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 36px;
   }
   
   .footer-section-1 ul {
     list-style: none;
     padding: 0;
-    font-size: 24px;
+    font-size: 38px;
+   
   }
   
   .footer-section ul li {
-    margin: 5px 0;
-  }
-  .footer-section-1{
-    width: 40%;
+    margin: 15px 0;
+}
+.footer-section-1{
+    width: 22%;
     justify-content: center;
     align-items: center;
     min-width: 200px;
     margin: 10px 20px;
-  }
-  .footer-section-1 img{
-    width: 6%;
-  }
-  
-  .footer-section ul li a {
+}
+.footer-section-1 img{
+    width: 10%;
+}
+
+.footer-section-1 ul li a {
     color: #060505;
+    gap: 45px;
     text-decoration: none;
   }
   
-  .footer-section ul li a:hover {
+  .footer-section-1 ul li a:hover {
     text-decoration: underline;
   }
   
   .footer-section p {
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 28px;
   }
   
   .footer-rights {
