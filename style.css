@@ -272,13 +272,25 @@ hr{
     color: #060608 ;
 }
 .btn-3{
+    width: 45%;
     color:#feffff ;
     display: inline-block;
     padding: 10px 25px;
-    font-size: 14px;
+    font-size: 10px;
     border-radius: 15px;
     margin-top: 15px;
     border: 1px solid #1cf0cd;
+    text-align: center;
+}
+.add-carrito{
+    color:#feffff ;
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 24px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 1px solid #1cf0cd;
+    text-align: center;
 }
 .btn-3:hover{
     background-color: #1cf0cd;
