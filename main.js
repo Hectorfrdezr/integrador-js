@@ -142,6 +142,7 @@ function fetchCart() {
             if (productIndex > -1) {
                 cart.splice(productIndex, 1);
                 updateCart();
+                updateCounter();
             }
         }
     });
