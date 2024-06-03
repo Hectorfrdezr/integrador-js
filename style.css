@@ -51,7 +51,7 @@ body{
     background-color: #1cf0cd;
 }
 .menu{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
