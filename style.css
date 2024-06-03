@@ -413,7 +413,7 @@ hr{
   
   
 @media(max-width:991px){
-    
+  
     .menu {
         padding: 20px;
         
@@ -485,7 +485,7 @@ hr{
         width: 100%;
     }
     .header-txt h1{
-        font-size: 40px;
+        font-size: 20px;
     }
    
     .header-img{
@@ -495,10 +495,17 @@ hr{
         width: 200px;
     }
     .precios{
-        flex-direction: column;
+        gap: 20px;
+    }
+    .header-txt a{
+        font-size: 12px;
     }
     .precio-1{
         margin: 0;
+        font-size: 15px;
+    }
+    .precio-2{
+        font-size: 18px;
     }
     .btn-1{
         margin: 20px 0;
@@ -514,10 +521,16 @@ hr{
       grid-template-columns: repeat(1, 1fr);  
     }
     .products{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 30px;
     }
     .products h2{
         font-size: 22px;
+    }
+    .products img{
+        max-width: 100px;
     }
     .products h1{
         font-size: 12px;

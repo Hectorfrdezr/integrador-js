@@ -77,7 +77,7 @@ function fetchProducts() {
                                     <p class="precio-1">Antes: $${(product.price * 1.2).toFixed(2)}</p>
                                     <p class="precio-2">Ahora: $${product.price}</p>
                                 </div>
-                                <a href="#" class="btn-1">información</a>
+                                <a href="#lista-1" class="btn-1">información</a>
                             </div>
                             <div class="header-img">
                                 <img src="${product.image}" alt="${product.title}">
