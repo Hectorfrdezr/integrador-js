@@ -180,10 +180,10 @@ hr{
     color: #050505;
     margin-bottom: 35px; 
 }
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    gap: 20px; 
 }
 .product {
     width: calc(25%-25px);
@@ -193,8 +193,8 @@ hr{
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    padding: 25px;
 }
-
 .product:hover {
     transform: translateY(-5px);
 }
@@ -211,7 +211,7 @@ hr{
 }
 
 .product .product-text h3 {
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: 5px;
 }
 
@@ -219,6 +219,8 @@ hr{
     font-size: 14px;
     color: #666;
     margin-bottom: 10px;
+    max-width: 500px;
+    text-align: center;
 }
 
 .product .product-text .precio-2 {
