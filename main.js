@@ -31,7 +31,7 @@ function fetchProducts() {
                     <div class="product-text">
                         <h3>${product.title}</h3>
                         <p class="precio-2">$${product.price}</p>
-                        <a href="#" class="add-carrito btn-3" data-id="${product.id}">Comprar</a>
+                        <a href="#" class="add-carrito btn-3" data-id="${product.id}">Agregar al carrito</a>
                     </div>
                 `;
                 productList.appendChild(div);
@@ -47,6 +47,7 @@ function fetchCart() {
         cart.push(product);
     });
     updateCart();
+    updateCounter();   
 }
 
     // Función para obtener productos para los sliders
@@ -116,10 +117,14 @@ function fetchCart() {
                 .then(product => {
                     cart.push(product);
                     updateCart();
+                    updateCounter();
                 });
         }
     });
-
+    function updateCounter() {
+        const counterDiv = document.getElementById('cart-counter');
+        counterDiv.textContent = cart.length;
+    }
     // Evento click para eliminar productos del carrito
     document.querySelector('#lista-carrito').addEventListener('click', e => {
         if (e.target.classList.contains('remove')) {
@@ -138,6 +143,7 @@ function fetchCart() {
         e.preventDefault();
         cart.length = 0;
         updateCart();
+        updateCounter();
     });
 
     // Evento click para procesar la compra
@@ -164,6 +170,7 @@ function fetchCart() {
                 alert('Compra realizada con éxito!');
                 cart.length = 0;
                 updateCart();
+                updateCounter();
             })
             .catch(error => {
                 console.error('Error:', error);

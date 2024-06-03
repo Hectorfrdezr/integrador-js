@@ -82,6 +82,25 @@ body{
 .menu .navbar ul li a:hover{
     color: #1cf0cd;
 }
+.cart-counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 #menu{
     display: none;
 }
@@ -430,7 +449,27 @@ hr{
         padding: 20px;
         
       }
-      
+      .cart-counter {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 1000;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    #img-carrito{
+        margin-right: 15px;
+    }
       .menu label {
         display: initial;
         cursor: pointer;
