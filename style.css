@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
+    scroll-behavior:smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,6 +18,7 @@ body{
     margin: 0 auto;
 }
 .header{ 
+    flex-direction: column;
     background-color: #feffff;
     display: flex;
     align-items: center;
@@ -30,10 +32,10 @@ body{
     align-items: center;
 }
 .swiper-button-prev::after{
-    font-size: 25px;
+    font-size: 35px;
 }
 .swiper-button-next::after{
-    font-size: 25px;
+    font-size: 35px;
 }
 .swiper-button-prev{
     color: #2a2c2c;
@@ -119,7 +121,7 @@ td{
     color: #1b1c1b;
 }
 .header-content{
-    max-width: 1200px;
+    max-width: 1024px;
     padding: 200px 0 100px 0;
 }
 .header-info{
@@ -211,7 +213,7 @@ hr{
 }
 
 .product .product-text h3 {
-    font-size: 12px;
+    font-size: 22px;
     margin-bottom: 5px;
 }
 
@@ -224,7 +226,7 @@ hr{
 }
 
 .product .product-text .precio-2 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     color: #333;
 }
@@ -245,31 +247,27 @@ hr{
 }
 
 .product img{
-    width: 150px;
+    width: 30%;
     padding-bottom: 15px;
 }
 .products h2{
-
-    font-size: 60px;
+    font-size: 68px;
     color: #131313;
     margin-bottom:  50px;
 }
 .products{
+    background-color: #ffffff;
     text-align: center;
+    max-width: 1200px;
+    border-radius: 8px;
 }
-.product a{
-    color: #1c1f1f;
+.products h1{
+    font-size: 34px;
 }
-.product-text h3{
-    font-size: 22px;
-    color: #feffff;
-    margin-bottom: 15px;
+.products img{
+    max-width: 300px;
 }
-.product-text p{
-    color: #74788f;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
+
 .precio-2{
     color: #060608 ;
 }
@@ -280,41 +278,22 @@ hr{
     font-size: 14px;
     border-radius: 15px;
     margin-top: 15px;
-    border: 1px solid #7270ec;
+    border: 1px solid #1cf0cd;
 }
 .btn-3:hover{
-    background-color: #6c69f9;
+    background-color: #1cf0cd;
 }
-.footer{
-    display: flex;
-    padding: 30px 0;
-}
-.link{
-    width: 20%;
-}
-.link h3{
-    color: #feffff;
-    margin-bottom: 20px;
-}
-.link a{
-    color: #74788f;
-    font-size: 16px;
-    display: block;
-    margin-bottom: 10px;
-}
-.link h2{
-    color: #ebe7e7;
-    margin-bottom: 18px;
-}
-.link p{
-    color: #74788f;
-    font-size: 16px;
-}
-/* Formulario de contacto */
+
+
+/*Formulario de contacto */
 #contacto {
     padding: 2rem;
     background: #f4f4f4;
     margin-top: 2rem;
+    text-align: center;
+  }
+  #contacto h2{
+    font-size: 34px;
   }
   
   #contact-form {
@@ -361,29 +340,119 @@ hr{
     border-radius: 4px;
     cursor: pointer;
   }
+  /* Footer Styles */
+.footer {
+    color: #141414;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-section {
+    width: 20%;
+    min-width: 200px;
+    margin: 10px 20px;
+  }
+  
+  .footer h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .footer-section-1 ul {
+    list-style: none;
+    padding: 0;
+    font-size: 24px;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section-1{
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    margin: 10px 20px;
+  }
+  .footer-section-1 img{
+    width: 6%;
+  }
+  
+  .footer-section ul li a {
+    color: #060505;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-section p {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  .footer-rights {
+    text-align: center;
+    flex-basis: 100%;
+    margin-top: 20px;
+  }
+  
+  
 @media(max-width:991px){
     
-    .menu{
+    .menu {
         padding: 20px;
-    }
-    .menu label{
+        
+      }
+      
+      .menu label {
         display: initial;
-    }
-    .menu .navbar{
+        cursor: pointer;
+      }
+      
+      .menu .navbar {
         position: absolute;
-        top:100%;
+        top: 100%;
         left: 0;
         right: 0;
-        background-color: #1f1e1e;
+        background-color: #2d6546;
         display: none;
-        
-    }
-    .menu .navbar ul li{
+      }
+      
+      .navbar.active {
+        display: block;
+      }
+      
+      .menu .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .menu .navbar ul li {
         width: 100%;
-    }
-    #menu:checked ~ .navbar{
-        display: initial;
-    }
+        text-align: center;
+      }
+      
+      .menu .navbar ul li a {
+        display: block;
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .menu .navbar ul li a:hover {
+        background-color: #333;
+      }
+    
+    
     .logo{
         display: none;
     }
@@ -434,36 +503,45 @@ hr{
         font-size: 30px;
         margin-bottom: 0;
     }
-    .categories{
+    #product-list{
       grid-template-columns: repeat(1, 1fr);  
-    }
-    .categorie{
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    .categoria-1{
-        width: 100%;
-        margin-bottom: 25px;
-        order: -1;
-    }
-    .categorias-img{
-        width: 100%;
     }
     .products{
         padding: 30px;
     }
-    .products h2{
-        font-size: 40px;
+    .products h1{
+        font-size: 25px;
         margin-bottom: 40px;
     }
-    .footer{
+    .footer {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        font-size: 22px;
+        justify-content: center;
+        align-items: center;
     }
-    .link{
-        width: 100%;
+    .footer-section-1 img{
+        width: 16%;
     }
-
-}
+    .footer-section-1 {
+        margin: 20px 0;
+      }
+      .footer-section-1 ul li a{
+        color: #060505;
+      }
+    .footer-section{
+        margin: 20px 0;
+      }
+    
+    .footer-rights {
+        font-size: 8px;
+        margin-top: 10px;
+      }
+    .footer-section ul{
+        font-size: 14px;
+      }
+    .footer-section p{
+        font-size: 14px;
+      } 
+    
+    }

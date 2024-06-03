@@ -30,7 +30,6 @@ function fetchProducts() {
                     <img src="${product.image}" alt="${product.title}">
                     <div class="product-text">
                         <h3>${product.title}</h3>
-                        <p>${product.description}</p>
                         <p class="precio-2">$${product.price}</p>
                         <a href="#" class="add-carrito btn-3" data-id="${product.id}">Comprar</a>
                     </div>
@@ -191,13 +190,21 @@ function fetchProducts() {
     updateCart();  // Actualizar la vista del carrito al cargar la página
 
     // Menú hamburguesa
-    const menuIcon = document.querySelector('.menu-icono');
-    const navbar = document.querySelector('.navbar');
+const menuIcon = document.querySelector('.menu-icono');
+const navbar = document.querySelector('.navbar');
+const menuCheckbox = document.getElementById('menu-checkbox');
 
-    menuIcon.addEventListener('click', () => {
-        navbar.classList.toggle('active');
-    });
+menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    menuCheckbox.checked = !menuCheckbox.checked; 
+});
 
+document.addEventListener('click', (event) => {
+    if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
+        navbar.classList.remove('active');
+        menuCheckbox.checked = false; 
+    }
+});
     // Formulario de contacto
     const contactForm = document.getElementById('contact-form');
     const nameInput = document.getElementById('name');
